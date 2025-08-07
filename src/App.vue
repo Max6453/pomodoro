@@ -8,11 +8,11 @@ const seconds = ref(0)
 let timerInterval
 
 // Import background images
-import bgEvening from './assets/Cyberpunk2077-Evening.jpg'
-import bgWatson from './assets/Cyberpunk2077-Watson.jpg'
-import bgWestbrook from './assets/Cyberpunk2077-Westbrook.jpg'
-import bgFlat from './assets/flat-DS1.jpg'
-import bgWaterfall from './assets/Waterfall-DS1.jpg'
+import bgEvening from '../public/assets/Cyberpunk2077-Evening.jpg'
+import bgWatson from '../public/assets//Cyberpunk2077-Watson.jpg'
+import bgWestbrook from '../public/assets/Cyberpunk2077-Westbrook.jpg'
+import bgFlat from '../public/assets/flat-DS1.jpg'
+import bgWaterfall from '../public/assets/Waterfall-DS1.jpg'
 
 // Timer state
 // ...existing code...
