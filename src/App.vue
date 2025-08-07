@@ -1,6 +1,5 @@
 <script setup>
 import { ref, computed } from 'vue'
-import { Analytics } from '@vercel/analytics/nuxt'
 // Timer state
 const timeInMinutes = ref(25)
 const isRunning = ref(false)
@@ -75,7 +74,6 @@ const formattedTime = computed(() => {
 </script>
 
 <template>
-  <analytics />
   <main :style="currentBackground">
     <header class="relative backdrop-blur-lg">
       <h1 class="text-4xl">Pomodoro Timer</h1>
