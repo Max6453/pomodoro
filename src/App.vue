@@ -59,6 +59,7 @@ const stopTimer = () => {
 const resetTimer = () => {
   stopTimer()
   timeInMinutes.value = 25
+  timeInMinutes.value = 15
   seconds.value = 0
 }
 
@@ -115,6 +116,9 @@ const formattedTime = computed(() => {
         </div>
       </div>
     </section>
+    <footer class="relative top-39 text-center text-white">
+      <span>Presented by MHBlog. Copyright © 2025 - All right reserved by MHBlog</span>
+    </footer>
   </main>
 </template>
 
