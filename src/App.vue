@@ -8,13 +8,11 @@ let timerInterval
 
 // Import background images
 import bgEvening from '../public/assets/Cyberpunk2077-Evening.jpg'
-import bgWatson from '../public/assets//Cyberpunk2077-Watson.jpg'
+import bgWatson from '../public/assets/Cyberpunk2077-Watson.jpg'
 import bgWestbrook from '../public/assets/Cyberpunk2077-Westbrook.jpg'
 import bgFlat from '../public/assets/flat-DS1.jpg'
 import bgWaterfall from '../public/assets/Waterfall-DS1.jpg'
-
-// Timer state
-// ...existing code...
+import bgPlagueTale from '../public/assets/plague-tale-requiem.jpg'
 
 // Background customization
 const backgrounds = [
@@ -23,9 +21,22 @@ const backgrounds = [
   `url(${bgWestbrook})`,
   `url(${bgFlat})`,
   `url(${bgWaterfall})`,
+  `url(${bgPlagueTale})`,
+]
+
+// Corresponding game names
+const gameNames = [
+  'Cyberpunk 2077 - Japantown',
+  'Cyberpunk 2077 - Judys apartment',
+  'Cyberpunk 2077 - Eurodynes mansion',
+  'Death Stranding - Upper waterfalls',
+  'Death Stranding - Lower waterfalls',
+  'A Plague Tale: Requiem - Chapter 1',
 ]
 
 const currentBgIndex = ref(0)
+const GameName = ref(gameNames[0])
+
 const currentBackground = computed(() => ({
   backgroundImage: backgrounds[currentBgIndex.value],
   backgroundSize: 'cover',
@@ -63,8 +74,10 @@ const resetTimer = () => {
   seconds.value = 0
 }
 
+// 🔹 Change background & game name together
 const changeBackground = () => {
   currentBgIndex.value = (currentBgIndex.value + 1) % backgrounds.length
+  GameName.value = gameNames[currentBgIndex.value]
 }
 
 const formattedTime = computed(() => {
@@ -84,7 +97,7 @@ const formattedTime = computed(() => {
           <li>
             <button
               @click="changeBackground"
-              class="hover:shadow-2xl hover:scale-110 duration-300 shadow-black"
+              class="hover:shadow-2xl hover:scale-110 duration-900 shadow-black"
             >
               Change background
             </button>
@@ -92,6 +105,12 @@ const formattedTime = computed(() => {
         </ul>
       </nav>
     </header>
+
+    <!-- 🔹 Display game name -->
+    <span class="absolute text-white top-50 left-145 text-xl font-bold drop-shadow-lg">
+      {{ GameName }}
+    </span>
+
     <section class="timer-section">
       <div class="timer-display">
         <span class="time text-white">{{ formattedTime }}</span>
@@ -180,6 +199,7 @@ button {
   background: #4a4a4a00;
   color: white;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: 0.3s;
+  animation-duration: 300ms;
 }
 </style>
