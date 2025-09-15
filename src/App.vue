@@ -70,7 +70,7 @@ const stopTimer = () => {
 const resetTimer = () => {
   stopTimer()
   timeInMinutes.value = 25
-  timeInMinutes.value = 15
+  timeInMinutes.value = 25
   seconds.value = 0
 }
 
